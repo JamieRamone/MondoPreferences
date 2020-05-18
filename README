@@ -1,0 +1,110 @@
+						    The Mondo Preferences App
+
+So what is this shit?
+
+This app is a clone of NeXT's preferences application for system versions 1 onward for the Mondo Development Environment. Unlike
+other implementations, this one retains the window dimensions and tries to maintain the exact same visual style wherever possible.
+
+It's at version 0.9 because several preferences, namely Time & Date, Localization, mouse, keyboard (partly), display, fonnts, menu,
+and UNIX expert (also partly). Password, (most of) sound, part of UNIX expert, and part of keyboard preferences are complete and
+working. Most of the rest depend on a more complete workspace manager, while others just need some time and dedication to complete.
+However, the complete and partially complete modules offer enough functionality for the moment. And since the goal of releasing the
+Mondo Development Environment out to the public was to provide for a fairly usable GUI environment to develop games, out it goes,
+ready or not :P
+
+So how do I install this shit?
+
+This is an app designed for the Mondo Development Environment, as stated above, so you'll need that. Alternatively, you can install
+it on a Linux system. In this case you'll need the GNUStep development and runtime system and ALSA installed. GNUstep is comprised
+of four components: make, base, gui, and back. This app was built using gnustep-make v2.7.0, gnustep-base v1.26.0, gnustep-gui
+v0.27.0, and gnustep-back v0.27.0. Older versions may work but that's a coin-toss.
+
+Once the requirements are met you can install it by issuing the command 'make && make install' in a terminal window or the system
+console, depending on your system. If all went well you should see severla warnings, but no error message. finally, you can check if
+it's working properly by issuing 'openapp Preferences' in the command line. It should start the app, which automatically hides
+itself on startup (though it doesn't always work). If it did start up, you'll get an icon of a digital clock and a little callendar,
+both displaying the sysntem's current time and date respectively. If you double-click it (assuming it started hidden as it should),
+you should see the application's menu and sole window.
+
+So how do I use this shit?
+
+The application consists of a single window, which is divided into two parts: the top third holds a scrollable row of button to
+select the preference, and the bottom two thirds containing the preference's pane (the view containing all relevant ccontrols). You
+first scroll across the row of preferences until you find the one you want to check/change, and then click on it. The lower part of
+the window will now shor the controls for that preference.
+
+The first fully functional one is the password preference. This is the third one from the left, the one with the lock and keys. It
+allows you to change the password for your account. It presents only a disabled text field displaying the message 'Password secure',
+and two buttons. One is enabled, labeled 'Change', and set as the default one. The other is disabled and labeled 'Cancel'.
+
+In order to change your password, press the button labeled 'Change' or just press 'Enter'. The text field becomes enabled and is
+cleared, and a message will appear above it asking you to type in your current password. Type it in. As you type you'll notice the
+cursor moving but no text appears in the field. This is not a bug: the text tield is a secure text field, and hides the text as you
+type it in from prying eyes (even the number of characters is hidden this way). The you press 'Enter' or just click on the default
+button, now labeled OK. If You typed it in incorrectly, an alert panel will appear to notify you of this and you'll have to start
+over after acknowledging it.
+
+If you typed it in correctly, you'll now be asked to enter the new one, and the image on the left will be that of an open lock. Type
+in your new password and press 'Enter' or click 'OK' again. Now you'll be asked to re-type the new password and once again press
+'Enter' or click 'Ok'. IF you fail it'll tell you with an alert panel, and will have to try again after acknowledging. Once this is
+complete the image on the left will change to a secured lock, the text field and buttons change to thier original state, and the
+informative text above the text field disappears. As of this moment your new password is enabled.
+
+Note that at any point after you start the process you may cancel it by clicking on the button labeled 'Cancel', just to the left of
+the default one and which is enabled from that moment and until you finally change the password. Also, it' ONLY works for the system
+administrator, so it's useless outside of the Mondo Development Environment.
+
+The keyboard preferences, just to the right of the password one, is only partially functional. It includes a row of buttons to set
+the initial key repeat, another one for the repeat rate, a textfield to test out the current/new settings, a keyboardpannel to check
+the layout (and see the effect of the modifier keys), and an "Expert" panel to change certain keyboard modifier mappings. Of these
+the expert panel is the only part that's fully functional.
+
+The "Expert" panel can be brought up by clicking on the button on the lower left side of the pane, conveniently labeled 'Expert
+Options...'. This little panel allows you to change the default key mapping of the three main modifiers: Control, Alternate
+(sometimes called Option), and Command, both left and right. While GNUstep normally maps the Command keys to Control, despite PC
+keyboards having a command key since 1995, since the first time you access this panel it becomes correctly mapped but you can still
+change it to your liking.
+
+It also has a checkbox to fix a glitch with shift-dragging, which mostly affects GORM.
+
+The seventh preference from the left is the sound preferences. When clicked for the first time it displays the list of sounds
+available for the system beep. While this feature is yet to be implemented, it will remember your selection, which you can set by
+clicking on an entry. At the top left of the pane is a pop up button labeled 'System Beep', which is the list currently being
+displayed. Clicking on it reveals the other two options: 'Input' and 'Output'.
+
+When the 'Input' option is selected in the pop up, the list will change to reveal all of the mixer's input elements e.g. microphone,
+line-in, etc. These will all display a title at the top of each to identify them, and if they can be selected as an input source
+(spoiler alert: not all can), it'll display a little "L.E.D." light near the top right. If one is already selected it'll appear
+"lit up", and normal otherwise. Clicking on this L.E.D. selects a channel, causing it to appear lit, as well as the L.E.D, and the
+previously selected one to appear normal (and the L.E.D. off). If they include a volume control, it'll be available as one or two
+sliders, depending on whether it's monophonic or stereo respectively. And finally, if it can be muted it'll include a button to the
+right of the slider(s). This button appears lit up when the channel is not muted and normal hen muted.
+
+If you select the entry labeled 'Output' on the pop-up button, you'll get all the output mixer elements: speakers, line-out, etc.
+These can be operated exactly as the input ones, except that they can't be selected as a "main output channel" so they don't show
+the little L.E.D.s.
+
+The final, almost fully-functional preference is the last one: Unix Expert. In this one you can set up the default file creation
+mask by clicking on the matrix of buttons in the appropriately labeled box. You can also enable or disable the "UNIX Expert" mode in
+the 'File System Options' box. This allows you to see all files and folders normally hidden from view, including all "dot files"
+(files whose name begin with a period) and every file listed in a text file named '.hidden' if it exists (for the current
+directory). It takes immediate effect i.e. no need to log out and back in, but in the Mondo Workspace Manager it requires you to
+refresh the viewer window.
+
+For the moment the rest of the options in this pane, as well as the rest of the preferences not mentioned above are inactiv: they do
+nothing. I do plan to get everything running though it may take a while. Stay tuned!
+
+Wait, how are you licensing this shit?
+
+This project is licensed under the terms of the third edition of the GNU General Public License. Under these terms you may use it
+however you please, make any number of copies, modify it, and redistribute it, modified or not, without having to ask permission.
+It also prohibits you from re-license it, so any modified copies you distribute are licensed under the same terms, and you HAVE to
+make the source code INCLUDING YOUR MODIFICATIONS available to those you give it away to. You of course also have access to the
+initial source code, the one I provide as the project's author.
+
+The license is included with the source code in the text file named COPYING. There you can find the sepecifics about the rights I
+just described. It also must be included with the source code if you re-distribute it, and it cannot itself be modified.
+
+That's some kewl shit!
+
+I know, right?

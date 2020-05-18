@@ -1,0 +1,24 @@
+{
+	ApplicationDescription = "Mondo Megagames preferences application";
+	ApplicationName = Preferences;
+	ApplicationRelease = 0.9;
+	Authors = (
+		"Jamie Ramone"
+	);
+	FullVersionID = 0.9;
+	NSExecutable = Preferences;
+	NSIcon = "Preferences.tiff";
+	NSMainNibFile = "Preferences.gorm";
+	NSPrincipalClass = NSApplication;
+	NSRole = Application;
+	NSTypes = (
+		{
+			NSName = "Preference";
+			NSHumanReadableName = "Preferences app module";
+			NSIcon = "PreferencesModule.tiff";
+			NSUnixExtensions = (
+				preference
+			);
+		}
+	);
+}

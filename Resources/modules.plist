@@ -1,0 +1,15 @@
+{
+	modules = (
+		"Localization.preference",
+		"Time.preference",
+		"Password.preference",
+		"Keyboard.preference",
+		"Mouse.preference",
+		"Display.preference",
+		"Sound.preference",
+		"Fonts.preference",
+		"Menu.preference",
+		"UnixExpert.preference"
+	);
+	AppIcon = "Standard.AppIconView";
+}

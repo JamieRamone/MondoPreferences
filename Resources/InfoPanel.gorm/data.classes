@@ -1,0 +1,18 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "newAction:"
+	);
+	Super = NSObject;
+    };
+    InfoPanelController = {
+	Actions = (
+	    "close:"
+	);
+	Outlets = (
+	    window
+	);
+	Super = NSObject;
+    };
+}

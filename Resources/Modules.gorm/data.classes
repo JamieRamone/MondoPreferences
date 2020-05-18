@@ -1,0 +1,21 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "showPane:"
+	);
+	Super = NSObject;
+    };
+    LayoutController = {
+	Actions = (
+	    "showPane:"
+	);
+	Outlets = (
+	    window,
+	    buttonMatrix,
+	    paneContainer,
+	    scrollView
+	);
+	Super = NSObject;
+    };
+}

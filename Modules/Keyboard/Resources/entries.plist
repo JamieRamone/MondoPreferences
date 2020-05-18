@@ -1,0 +1,11 @@
+{
+	"None" = "NoSymbol";
+	"Left Alt" = "Alt_L";
+	"Right Alt" = "Alt_R";
+	"Left Control" = "Control_L";
+	"Right Control" = "Control_R";
+	"Left Super" = "Super_L";
+	"Right Super" = "Super_R";
+	"AltGr" = "ISO_Level3_Shift";
+	"Menu" = "Menu";
+}

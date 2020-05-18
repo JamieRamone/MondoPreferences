@@ -1,0 +1,47 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "setInitialDelayAction:",
+	    "setModifier:",
+	    "setRepeatRateAction:",
+	    "shiftModWorkaround:"
+	);
+	Super = NSObject;
+    };
+    KeyboardPaneController = {
+	Actions = (
+	    "shiftModWorkaround:",
+	    "setModifier:",
+	    "setRepeatRateAction:",
+	    "setInitialDelayAction:"
+	);
+	Outlets = (
+	    leftAltPopup,
+	    leftCommandPopup,
+	    leftControlPopup,
+	    shiftBugWorkaroundCheckbox,
+	    rightAltPopup,
+	    rightCommandPopup,
+	    rightControlPopup,
+	    initialDelayMatrix,
+	    repeatRateMatrix
+	);
+	Super = PreferencePaneController;
+    };
+    KeyboardView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSView;
+    };
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+}

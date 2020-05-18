@@ -1,0 +1,44 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "selectFont:"
+	);
+	Super = NSObject;
+    };
+    FontsPaneController = {
+	Actions = (
+	    "selectFont:"
+	);
+	Outlets = (
+	    titleBarView,
+	    fixedPitchFontView,
+	    menuView,
+	    otherFontsView,
+	    selectedFontNameField
+	);
+	Super = PreferencePaneController;
+    };
+    MenuView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSView;
+    };
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+    TitleBarView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSView;
+    };
+}

@@ -1,0 +1,15 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    StandardAppIconView = {
+	Actions = (
+	);
+	Outlets = (
+	    background,
+	    dayView,
+	    ledView,
+	    monthView,
+	    digitView
+	);
+	Super = NSView;
+    };
+}

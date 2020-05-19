@@ -1,0 +1,18 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+    TemplatePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = PreferencePaneController;
+    };
+}

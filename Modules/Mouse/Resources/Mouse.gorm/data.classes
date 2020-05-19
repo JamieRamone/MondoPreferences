@@ -1,0 +1,23 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    MousePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    menuButtonActivationMatrix,
+	    mouseButtonSelectionImage,
+	    mouseButtonSelectionMatrix,
+	    mouseSpeedMatrix,
+	    doubleClickDelayMatrix
+	);
+	Super = PreferencePaneController;
+    };
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+}

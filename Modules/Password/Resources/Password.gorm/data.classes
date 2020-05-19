@@ -1,0 +1,33 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "changePassword:",
+	    "newAction:"
+	);
+	Super = NSObject;
+    };
+    LoginPaneController = {
+	Actions = (
+	    "changePassword:",
+	    "cancel:"
+	);
+	Outlets = (
+	    cancelButton,
+	    informationLabel,
+	    label,
+	    lockImageView,
+	    okButton,
+	    passwordTextField
+	);
+	Super = PreferencePaneController;
+    };
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+}

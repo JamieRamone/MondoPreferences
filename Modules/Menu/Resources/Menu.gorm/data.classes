@@ -1,0 +1,42 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "addCommand:",
+	    "removeCommand:",
+	    "commandTextChanged:"
+	);
+	Super = NSObject;
+    };
+    MenuLocation = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSControl;
+    };
+    MenuPaneController = {
+	Actions = (
+	    "addCommand:",
+	    "removeCommand:",
+	    "commandTextChanged:"
+	);
+	Outlets = (
+	    addButton,
+	    commandField,
+	    commandKeyField,
+	    menuLocation,
+	    scrollView,
+	    removeButton
+	);
+	Super = PreferencePaneController;
+    };
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+}

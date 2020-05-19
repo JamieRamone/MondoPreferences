@@ -1,0 +1,59 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    ClockFaceSelectorView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSButton;
+    };
+    FirstResponder = {
+	Actions = (
+	    "changeHourTypeAction:",
+	    "decreaseFieldAction:",
+	    "increaseFieldAction:",
+	    "changeClockFaceAction:",
+	    "selectRegionAction:",
+	    "setTimeAction:",
+	    "timeManuallyChangedAction:"
+	);
+	Super = NSObject;
+    };
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+    TemplatePaneController = {
+	Actions = (
+	    "changeHourTypeAction:",
+	    "decreaseFieldAction:",
+	    "increaseFieldAction:",
+	    "selectRegionAction:",
+	    "setTimeAction:",
+	    "timeManuallyChangedAction:",
+	    "changeClockFaceAction:"
+	);
+	Outlets = (
+	    clockFaceSelectionView,
+	    hourSelectionCheckBox,
+	    currentTimeTextField,
+	    increaceButton,
+	    decreaceButton,
+	    setTimeButton,
+	    timeZoneRegionSelectorPopUpButton,
+	    timeZoneSelectorView
+	);
+	Super = PreferencePaneController;
+    };
+    TimeZoneSelectorView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSView;
+    };
+}

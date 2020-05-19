@@ -1,0 +1,37 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "rowSelected:",
+	    "selectionChanged:"
+	);
+	Super = NSObject;
+    };
+    MixerView = {
+	Actions = (
+	);
+	Outlets = (
+	);
+	Super = NSView;
+    };
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+    SoundPaneController = {
+	Actions = (
+	    "rowSelected:",
+	    "selectionChanged:"
+	);
+	Outlets = (
+	    inputBrowser,
+	    outputBrowser,
+	    systemBeepBrowser
+	);
+	Super = PreferencePaneController;
+    };
+}

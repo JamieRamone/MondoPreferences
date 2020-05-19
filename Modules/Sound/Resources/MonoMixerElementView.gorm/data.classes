@@ -1,0 +1,28 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "muteChannel:",
+	    "selectChannel:",
+	    "volumeSliderChanged:"
+	);
+	Super = NSObject;
+    };
+    MixerElementController = {
+	Actions = (
+	    "muteChannel:",
+	    "volumeSliderChanged:",
+	    "selectChannel:"
+	);
+	Outlets = (
+	    leftVolumeSlider,
+	    muteButton,
+	    titleLabel,
+	    view,
+	    selectedChannelButton,
+	    hashMarksBox,
+	    window
+	);
+	Super = NSObject;
+    };
+}

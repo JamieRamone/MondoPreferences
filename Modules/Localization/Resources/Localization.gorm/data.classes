@@ -1,0 +1,35 @@
+{
+    "## Comment" = "Do NOT change this file, Gorm maintains it";
+    FirstResponder = {
+	Actions = (
+	    "changeMeasurementUnits:",
+	    "changePaperSize:",
+	    "selectKeyboardLayout:",
+	    "openKeyboardPanel:"
+	);
+	Super = NSObject;
+    };
+    LocalizationPaneController = {
+	Actions = (
+	    "changeMeasurementUnits:",
+	    "changePaperSize:",
+	    "selectKeyboardLayout:",
+	    "openKeyboardPanel:"
+	);
+	Outlets = (
+	    keyboardLayoutsBrowser,
+	    languagesBrowser,
+	    measurementUnitsPopUpButton,
+	    paperSizePopUpButton
+	);
+	Super = PreferencePaneController;
+    };
+    PreferencePaneController = {
+	Actions = (
+	);
+	Outlets = (
+	    pane
+	);
+	Super = NSObject;
+    };
+}

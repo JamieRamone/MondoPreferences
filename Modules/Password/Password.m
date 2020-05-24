@@ -18,6 +18,9 @@
  * <http://www.gnu.org/licenses/>
  *
  **********************************************************************************************************************************/
+#define _GNU_SOURCE
+#include <crypt.h>
+#include <pwd.h>
 #include <unistd.h>
 #include <fcntl.h>
 
@@ -132,19 +135,16 @@ static inline char * _encrypt ( register NSString * original )
 	//NSLog ( @"-verifyOldPassword: called." );
 	[okButton setEnabled: NO];
 	original = [passwordTextField stringValue];
-	criteria = ( userEntry->pw_passwd != NULL && strlen ( userEntry->pw_passwd ) != 0 );
-	target = Choose ( criteria, && nofix, && fix );
-	goto * target;
-fix:	pw = _salt ();
-	goto resume;
-nofix:	pw = userEntry->pw_passwd;
-resume:	password = [NSString stringWithCString: crypt ( [original cString], pw ) encoding: NSASCIIStringEncoding];
-	NSLog ( @"Entered %@, password: %s.", password, userEntry->pw_passwd );
-	criteria = (BOOL) ( strcmp ( [password cString], userEntry->pw_passwd ) == 0 );
-	//NSLog ( @"Criteria = %@.", criteria ? @"true" : @"false" );
+	criteria = ( strlen ( userEntry->pw_passwd ) != 0 );
 	target = Choose ( criteria, && a, && b );
 	goto * target;
-a:	//NSLog ( @"Passwords match, proceeding..." );
+a:	password = [NSString stringWithCString: crypt ( [original cString], userEntry->pw_passwd ) encoding: NSASCIIStringEncoding];
+	//NSLog ( @"Entered %@, password: %s.", password, userEntry->pw_passwd );
+	criteria = (BOOL) ( strcmp ( [password cString], userEntry->pw_passwd ) == 0 );
+	//NSLog ( @"Criteria = %@.", criteria ? @"true" : @"false" );
+	target = Choose ( criteria, && b, && c );
+	goto * target;
+b:	//NSLog ( @"Passwords match, proceeding..." );
 	[informationLabel setStringValue: @"Please type in your new password."];
 	[passwordTextField setStringValue: nil];
 	[okButton setAction: @selector ( _getNewPassword: )];
@@ -153,7 +153,7 @@ a:	//NSLog ( @"Passwords match, proceeding..." );
 	original = [[NSBundle bundleForClass: [self class]] pathForImageResource: LockOpenImage];
 	[lockImageView setImage: [[NSImage alloc] initWithContentsOfFile: original]];
 	goto out;
-b:	//NSLog ( @"Current password validation failed." );
+c:	//NSLog ( @"Current password validation failed." );
 	[passwordTextField setEnabled: NO];
 	[AlertPanelController alertPanelWithTitle: @"Alert" message: @"Sorry, you entered your old password incorrectly." defaultButtonLabel: @"OK" alternateButtonLabel: nil otherButtonLabel: nil];
 	[self _initialState];
@@ -187,8 +187,7 @@ out:	[pool release];
 	criteria = ( [password compare: string] != NSOrderedSame );
 	target = Choose ( criteria, && a, && b );
 	goto * target;
-a:	//NSRunAlertPanel ( @"Alert", @"Sorry, passwords don't match. Please type it in again.", @"OK", nil, nil );
-	[AlertPanelController alertPanelWithTitle: @"Alert" message: @"Sorry, passwords don't match. Please type it in again." defaultButtonLabel: @"OK" alternateButtonLabel: nil otherButtonLabel: nil];
+a:	[AlertPanelController alertPanelWithTitle: @"Alert" message: @"Sorry, passwords don't match. Please type it in again." defaultButtonLabel: @"OK" alternateButtonLabel: nil otherButtonLabel: nil];
 	[passwordTextField setStringValue: nil];
 	goto out;
 b:	[self _updatePassword];
